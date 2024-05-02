@@ -66,6 +66,7 @@ int PMMG_check_inputData(PMMG_pParMesh parmesh)
     met  = parmesh->listgrp[k].met;
 
     /* Check options */
+    mesh->info.lag = -1;
     if ( mesh->info.lag > -1 ) {
       fprintf(stderr,
               "  ## Error: lagrangian mode unavailable (MMG3D_IPARAM_lag):\n");

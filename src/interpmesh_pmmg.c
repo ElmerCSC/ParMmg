@@ -548,11 +548,13 @@ int PMMG_interpMetricsAndFields_mesh( MMG5_pMesh mesh,MMG5_pMesh oldMesh,
         /* Flag point as interpolated */
         ppt->flag = mesh->base;
         continue; // treated by copyMetric_points
+#if 0
       } else if ( ppt->tag & MG_BDY ) {
 
 #ifdef USE_POINTMAP
         ifoundTria = ppt->s;
 #endif
+
         /** Locate point in the old mesh */
         ier = PMMG_locatePointBdy( oldMesh, ppt,
                                    triaNormals, nodeTrias, barycoord,
@@ -599,6 +601,7 @@ int PMMG_interpMetricsAndFields_mesh( MMG5_pMesh mesh,MMG5_pMesh oldMesh,
         /* Flag point as interpolated */
         ppt->flag = mesh->base;
 
+#endif
       } else {
 
 #ifdef USE_POINTMAP
